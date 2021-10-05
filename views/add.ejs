@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/studentmanager/list">Danh sách sinh viên</a> </li>
+    <li class="breadcrumb-item active">Thêm</li>
+</ol>
+<h1 class="display-4">Thêm sinh viên</h1>
+<form method="POST" action="/studentmanager/create">
+    <div class="form-group">
+        <label for="name">Họ và tên</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="maSV">Mã sinh viên</label>
+        <input type="text" name="maSV" class="form-control">
+    </div>
+    <input type="submit" value="Submit" class="btn  btn-primary">   
+</form>

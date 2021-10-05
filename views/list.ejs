@@ -1,0 +1,51 @@
+<h1 class="display-4">Danh sách sinh viên</h1>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Tên </th>
+            <th>Mã SV</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% StudentManager.forEach(function(student){ %>
+            <tr>
+                <td><%= student.id %></td>
+                <td><%= student.name %></td>
+
+                <td><%= student.maSV %></td>
+                <td>
+                <form  class="d-inline" action="/studentmanager/edit" method="POST">
+                    <input  style="visibility: hidden;"  class="btn btn-primary" type="text" name="id" value=<%=student.id %> >   
+                    <input type="submit" class="btn btn-primary" value="Edit" >
+                   
+                </form>
+                </td>
+                <td>
+                    <form onsubmit="return myFunction();"  class="d-inline" action="/studentmanager/delete" method="POST">
+                        
+                        <input type="submit" class="btn btn-danger" value="Delete" >
+                        <input id="0" style="visibility: hidden;"  class="btn btn-danger" type="text" name="id" value=<%=student.id %> >
+                    </form>
+               
+                </td>
+            </tr>
+
+        <% }) %>
+      
+    </tbody>
+
+</table>
+<script>
+    function myFunction() {
+    
+      var r = confirm("Bạn có muốn xóa sinh viên này ?");
+      if (r == false) {
+        return false;
+       } 
+    
+    
+};
+    
+</script>
